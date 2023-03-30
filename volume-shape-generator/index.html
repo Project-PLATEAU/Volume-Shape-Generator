@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Volume Shape Generator</title>
+</head>
+<body>
+<div id="app"></div>
+<script type="module" src="/src/main.ts"></script>
+<div class="canvasContainer">
+    <canvas class="babylonRenderCanvas" touch-action="none"></canvas>
+    <div>
+        <p id="volumeResult"></p>
+
+        <p class="resultText">
+            <button type="button" id="totalGlbDownloadButton" hidden>Total GLB Download</button>
+            <button type="button" id="upperGlbDownloadButton" hidden>Upper GLB Download</button>
+            <button type="button" id="underGlbDownloadButton" hidden>Under GLB Download</button>
+        </p>
+    </div>
+</div>
+</body>
+</html>
