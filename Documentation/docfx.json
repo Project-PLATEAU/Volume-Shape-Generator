@@ -1,0 +1,37 @@
+{
+    "metadata": [
+    ],
+    "build": {
+        "globalMetadata": {
+            "_appTitle": "Volume-Shape-Generator",
+            "_appFooter": "Volume-Shape-Generator",
+            "_disableContribution": true,
+            "_enableSearch": true
+        },
+        "content": [
+            {
+                "files": [
+                    "toc.yml",
+                    "index.md"
+                ]
+            },
+            {
+                "src": "manual",
+                "files": [
+                    "toc.yml",
+                    "*.md"
+                ],
+                "dest": "manual"
+            }
+        ],
+        "resource": [
+            {
+                "files": [
+                    "resources/**/*"
+                ]
+            }
+        ],
+
+        "dest": "../docs"
+    }
+}

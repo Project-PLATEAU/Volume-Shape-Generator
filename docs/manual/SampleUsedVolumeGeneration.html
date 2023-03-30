@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>サンプルデータを使ったボリューム生成 | Volume-Shape-Generator </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="サンプルデータを使ったボリューム生成 | Volume-Shape-Generator ">
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="サンプルデータを使ったボリューム生成">サンプルデータを使ったボリューム生成</h1>
+
+<p>アプリケーションが用意している機能確認用サンプルを実行して、以下の機能を実装した画面を表示します。</p>
+<ul>
+<li>サンプルの建築物データから生成したボリュームのモデル表示機能</li>
+<li>容積値の表示機能</li>
+<li>モデルデータをGLB形式でダウンロードするボタン機能</li>
+</ul>
+<p>サンプルの建築物データには、本アプリケーションの<code>buildingParamSample.ts</code>ファイル内のJSONテキストデータが使用されます。</p>
+<h2 id="開発モードでアプリケーションを起動">開発モードでアプリケーションを起動</h2>
+<p>Node.jsを使用するアプリケーションですので、サンプルはサーバー上で実行しブラウザで確認します。<br>
+確認手法の一つである、開発用サーバーを起動して確認するコマンドを利用します。</p>
+<ul>
+<li>コマンドラインを開き、<code>volume-shape-generator</code>ディレクトリに移動します。</li>
+<li>以下のコマンドを実行します。</li>
+</ul>
+<pre><code>$ npm run dev
+</code></pre>
+<ul>
+<li>ローカルで開発用サーバーが起動します。表示されたURLをブラウザで開きます。</li>
+<li>アプリケーションが起動し、機能確認用サンプルが実行されます。</li>
+</ul>
+<pre><code>  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h to show help
+</code></pre>
+<p><img src="../resources/manual/sampleUsedVolumeGeneration/applicationWindow.png" alt=""></p>
+<h2 id="機能確認用サンプルの処理の流れ">機能確認用サンプルの処理の流れ</h2>
+<p><code>src/main.ts</code>から<code>src/sample/VolumeShapeGenerateController.ts</code>の<code>startOperation</code>関数が実行されボリューム生成処理が始まります。
+サンプル用のBabylon.jsのSceneとJSONテキストを引数としてAPIを実行し、容積値とGLBを受け取ります。
+データの受け取りが成功すると、容積値の結果を表示します。</p>
+<p><img src="../resources/manual/sampleUsedVolumeGeneration/F01.png" alt=""></p>
+<p>GLBのダウンロードボタンが表示されます。
+ダウンロードボタンをクリックすると端末にGLBファイルがダウンロードされます。</p>
+<p><img src="../resources/manual/sampleUsedVolumeGeneration/F02.png" alt=""></p>
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      Volume-Shape-Generator
+      
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

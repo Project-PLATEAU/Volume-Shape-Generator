@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>令和4年度 民間ユースケース開発　UC22-003「容積率可視化シミュレータ」の成果物（Volume Shape Generator） | Volume-Shape-Generator </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="令和4年度 民間ユースケース開発　UC22-003「容積率可視化シミュレータ」の成果物（Volume Shape Generator） | Volume-Shape-Generator ">
+    
+      <link rel="shortcut icon" href="favicon.ico">
+      <link rel="stylesheet" href="styles/docfx.vendor.css">
+      <link rel="stylesheet" href="styles/docfx.css">
+      <link rel="stylesheet" href="styles/main.css">
+      <meta property="docfx:navrel" content="toc.html">
+      <meta property="docfx:tocrel" content="manual/toc.html">
+    
+    <meta property="docfx:rel" content="">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="令和4年度-民間ユースケース開発uc22-003容積率可視化シミュレータの成果物volume-shape-generator">令和4年度 民間ユースケース開発　UC22-003「容積率可視化シミュレータ」の成果物（Volume Shape Generator）</h1>
+
+<p><img src="resources/index/applicationWindow.png" alt=""></p>
+<h2 id="ユースケースの概要">ユースケースの概要</h2>
+<p>近年、マンションの老朽化の急増が問題視される中、維持管理の適正化とともに、建替えの円滑化によるマンション再生の重要性が高まっています。 また、マンション建替円滑化法の施行により老朽化したマンションの建替えルールが整備されているものの、マンション所有者同士の合意形成及び建替えまでの実行プロセスの難易度がハードルとして存在しています。</p>
+<p>今回の実証実験では、3D都市モデルの建築物モデルや都市計画モデルを解析し、建物の未消化容積率を直感的でわかりやすく可視化するアプリケーションを開発することにより、マンション所有者及び民間事業者による開発余地の把握を可能とし、建替え・有効活用等の活性化への寄与を目指しています。</p>
+<h2 id="開発システムの概要">開発システムの概要</h2>
+<p>今回の実証実験では、3D 都市モデルの建築物モデル及び道路モデルを活用して、都市計画及び建築基準法に基づく指定容積率によって建築可能な建物の最大ボリューム（以下、容積ボリューム）と既存建築物の差分（余剰容積）を三次元的に分析して可視化するシステムを開発しました。</p>
+<p>GitHubリポジトリにて、以下の処理を行うアプリケーションをOSSとして公開しています。</p>
+<ul>
+<li>建築物情報をJSON形式で受け取り、建築可能な建物の最大ボリュームと既存建築物の差分を3Dモデルを生成します。</li>
+<li>建築物の3Dモデルデータの生成や、隣地斜線制限などの条件に従いモデルの加工を行う必要があるため、ブラウザ上で動くリアルタイム3Dエンジンの<code>Babylon.js</code>を使用しています。</li>
+<li>生成した3Dモデルから、容積値の算出とGLB形式の書き出しを行います。</li>
+<li>本アプリケーションでは機能確認用のサンプルを用意しています。SampleのJSON情報から3Dモデルを生成し、容積の数値表示とGLBファイルのダウンロードをテストできます。</li>
+</ul>
+<p>Volume Shape Generatorは以下の機能を有したアプリケーションです。</p>
+<ul>
+<li>ボリューム生成処理を行い、生成したボリュームから容積値とGLBファイルを取得する機能</li>
+<li>上記ボリューム生成、データ取得を呼び出すAPI機能</li>
+<li>API機能を使ってサンプルの建築物データからボリューム生成処理を行い、
+生成したボリュームの容積値の表示とGLBファイルのダウンロードを行う画面を表示する機能確認用サンプル</li>
+</ul>
+<p>各機能のソースコードは以下のディレクトリに格納されています。</p>
+<ul>
+<li>ボリューム生成機能、API機能のソースコードは<code>src/service</code>ディレクトリに格納されています。</li>
+<li>確認用サンプルのソースコードは<code>src/sample</code>ディレクトリに格納されています。
+<ul>
+<li>src下の<code>index.html</code>、<code>main.ts</code>、<code>style.css</code>ファイルはアプリケーションを実行した際にサンプルが実行されるように記述しています。</li>
+</ul>
+</li>
+</ul>
+<h2 id="ライセンス">ライセンス</h2>
+<ul>
+<li>本マニュアルの著作権は国土交通省に帰属します。</li>
+<li>本マニュアルはProject <a href="https://www.mlit.go.jp/plateau/site-policy/">PLATEAUのサイトポリシー</a>（CCBY4.0および政府標準利用規約2.0）に従い提供されています。</li>
+</ul>
+<h2 id="注意事項">注意事項</h2>
+<ul>
+<li>本マニュアルは参考資料として提供しているものです。動作保証は行っておりません。</li>
+<li>予告なく変更・削除する可能性があります。</li>
+<li>本マニュアルの利用により生じた損失及び損害等について、国土交通省はいかなる責任も負わないものとします。</li>
+</ul>
+<h2 id="参考資料">参考資料</h2>
+<ul>
+<li><a href="https://www.mlit.go.jp/plateau/libraries/technical-reports/">容積率可視化シミュレータ技術検証レポート</a></li>
+<li><a href="https://www.mlit.go.jp/plateau/use-case/uc22-003/">PLATEAU Webサイト Use caseページ「容積率可視化シミュレータ」</a></li>
+<li><a href="https://www.babylonjs.com/">Babylon.js Webサイト</a></li>
+</ul>
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      Volume-Shape-Generator
+      
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

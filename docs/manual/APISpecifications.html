@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>API仕様 | Volume-Shape-Generator </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="API仕様 | Volume-Shape-Generator ">
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="api仕様">API仕様</h1>
+
+<h2 id="apiの概要">APIの概要</h2>
+<p><code>src/service/api/VolumeShapeGenerator.ts</code>ファイルの関数を利用し
+容積値とGLBファイルの取得、Babylon.jsのScene上のObjectを破棄を行うことができます。</p>
+<ul>
+<li>容積値とGLBの取得は<code>getVolumeShapesData</code>関数を利用します。</li>
+<li>Babylon.jsのScene上のObjectを破棄する場合は<code>disposeObject</code>関数を利用します。</li>
+</ul>
+<h2 id="apiの処理の流れ">APIの処理の流れ</h2>
+<h3 id="getvolumeshapesdata関数">getVolumeShapesData関数</h3>
+<p>関数の引数に渡すデータを用意します。</p>
+<ul>
+<li>建築可能な建物の最大ボリュームと既存建築物の差分のモデル生成に必要な建物情報のJSONを用意します。
+<ul>
+<li>JSON作成に関しては「生成条件を指定したボリューム生成」のページの「3Dモデルデータ生成に必要な情報」の章を参照ください。</li>
+</ul>
+</li>
+<li>Babylon.js上で3Dモデルの加工処理を行うため、Babylon.jsのSceneを生成します。</li>
+</ul>
+<p>関数を実行します。</p>
+<ul>
+<li><code>src/service/api/VolumeShapeGenerator.ts</code>の<code>getVolumeShapesData</code>関数を実行します。
+<ul>
+<li>建物情報のJSONテキスト、<code>Babylon.js</code>の<code>Scene</code>、容積計算の詳細値、その他、取得するGLBファイルのPrefixやテストモードフラグのパラメータを引数として入力します。
+<ul>
+<li>容積計算の詳細値、取得するGLBファイルのPrefix、テストモードフラグにはデフォルト値が割り当てられていますので入力しなくても実行可能です。</li>
+<li>容積計算の詳細値は容積の精度に関わります。値が小さい程詳細な計算を行いますが処理時間に影響します。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>APIは実行されると以下の処理を行います。</p>
+<p>1: 建築可能な建物の最大ボリュームの3Dモデルデータ生成を開始します。</p>
+<ul>
+<li>建物形状のモデルデータを生成します。生成するモデルの高さは地域の高さ制限の値にします。</li>
+<li>各種条件に従い、ブーリアン処理を行うためのモデルを作成し、既に生成した建物モデル対して減算処理を行います。
+<ul>
+<li>隣地斜線制限に従いブーリアン処理を行うためのモデルを作成し、同様に減算処理を続けていきます。</li>
+<li>道路斜線制限に従い、同様に減算処理を続けていきます。</li>
+<li>「階高の各フロア面積合計 ÷ 敷地面積 が 容積率以下」となる条件の最大の高さを算出し、その高さ以上を減算処理で削ります。</li>
+</ul>
+</li>
+</ul>
+<p>以上の処理で、建築可能な建物の最大ボリュームの生成が完了します。</p>
+<p>2: 容積形状の体積計算とGLBの作成を行います。</p>
+<ul>
+<li>建築可能な建物の最大ボリュームのモデルをGLBとして書き出します</li>
+<li>建築可能な建物の最大ボリュームの容積を取得します。
+<ul>
+<li>容積は積層の面積 x 積層の間隔となる<code>volumeCalcDetailVal</code>の値で求め算出します。</li>
+</ul>
+</li>
+<li>建築可能な建物の最大ボリュームと既存建築物の差分データの取得に取りかかります。
+<ul>
+<li>元のビルの高さの情報に従い、その高さ以下を減算処理で削ります。このモデルが建築可能な建物の最大ボリュームと既存建築物の差分になります。</li>
+<li>差分のモデルの容積を取得し、GLBを書き出します。</li>
+<li>最大ボリュームの容積 - 残ったモデルの容積 で建築可能な建物の最大ボリュームと既存建築物の差分</li>
+<li>元のビルの高さ以下のモデルも生成し、容積の取得とGLB書き出しを行います。</li>
+</ul>
+</li>
+</ul>
+<p>取得した各容積値とGLBをAPI実行の結果として返します。</p>
+<h3 id="disposeobject関数">disposeObject関数</h3>
+<p>Babylon.jsのScene上のObjectを破棄します。</p>
+<ul>
+<li>第一引数にBABYLON.Sceneを入れます。</li>
+<li>破棄しないObjectがある場合は第二引数のstring配列にObject名を入れます。</li>
+</ul>
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      Volume-Shape-Generator
+      
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

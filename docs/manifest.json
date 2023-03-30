@@ -1,0 +1,238 @@
+{
+  "homepages": [],
+  "source_base_path": "/Users/m-takeda/Project/Proj_Proposition/Proj_Propsition_2022/VolumeShapeGenerator/230330/PLATEAU-UC22-003-Volume-Shape-Generator/Documentation",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "zAKw6/eS8+vn5O4z5AUbHquME3p1jO8o7tZ6e720cZw="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/APISpecifications.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/APISpecifications.html",
+          "hash": "rLT+Qyp525wvdiYRJFUCuQc+rXZQGzYua2BYf/GGmqk="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/ConditionalVolumeGeneration.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/ConditionalVolumeGeneration.html",
+          "hash": "iVY23ISWUhyiGlRac+RBYUOm7Hjjk/OI9787GCo5RMs="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/Preparation.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/Preparation.html",
+          "hash": "Zd+MFs3rkmwo3DgHmoV0xfMZocfRVVXCYo4nTzKlnVY="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/SampleUsedVolumeGeneration.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/SampleUsedVolumeGeneration.html",
+          "hash": "ot5YQyxNtmZrM1pXuUafkpnQqlYoXjrOjGKKHzzRsJw="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "manual/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "manual/toc.html",
+          "hash": "4p8Gfgf7cgS16/GkryJ7XAAdaRH9iRa0+ldvWcl0ZcU="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/index/applicationWindow.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/index/applicationWindow.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/manual.meta",
+      "output": {
+        "resource": {
+          "relative_path": "resources/manual.meta"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/manual/conditionalVolumeGeneration/distFolder.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/manual/conditionalVolumeGeneration/distFolder.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/manual/conditionalVolumeGeneration/floorAreaRatio.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/manual/conditionalVolumeGeneration/floorAreaRatio.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/manual/conditionalVolumeGeneration/foot.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/manual/conditionalVolumeGeneration/foot.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/manual/conditionalVolumeGeneration/kaidaka.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/manual/conditionalVolumeGeneration/kaidaka.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/manual/conditionalVolumeGeneration/maxLimitH.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/manual/conditionalVolumeGeneration/maxLimitH.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/manual/conditionalVolumeGeneration/originBldgHeight.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/manual/conditionalVolumeGeneration/originBldgHeight.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/manual/conditionalVolumeGeneration/rinchiCut.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/manual/conditionalVolumeGeneration/rinchiCut.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/manual/conditionalVolumeGeneration/siteArea01.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/manual/conditionalVolumeGeneration/siteArea01.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/manual/conditionalVolumeGeneration/syasenPlane01.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/manual/conditionalVolumeGeneration/syasenPlane01.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/manual/sampleUsedVolumeGeneration/F01.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/manual/sampleUsedVolumeGeneration/F01.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/manual/sampleUsedVolumeGeneration/F02.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/manual/sampleUsedVolumeGeneration/F02.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/manual/sampleUsedVolumeGeneration/applicationWindow.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/manual/sampleUsedVolumeGeneration/applicationWindow.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "torbzyZYAO9c5e0wKnkgsb/bXMuHNFHzJjanHG7O0nM="
+        }
+      },
+      "version": ""
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

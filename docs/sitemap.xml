@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://project-plateau.github.io/UC22-003-Volume-Shape-Generator/index.html</loc>
+    <lastmod>2023-03-30T03:23:14+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://project-plateau.github.io/UC22-003-Volume-Shape-Generator/manual/APISpecifications.html</loc>
+    <lastmod>2023-03-30T03:23:15+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://project-plateau.github.io/UC22-003-Volume-Shape-Generator/manual/ConditionalVolumeGeneration.html</loc>
+    <lastmod>2023-03-30T03:23:15+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://project-plateau.github.io/UC22-003-Volume-Shape-Generator/manual/Preparation.html</loc>
+    <lastmod>2023-03-30T03:23:15+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://project-plateau.github.io/UC22-003-Volume-Shape-Generator/manual/SampleUsedVolumeGeneration.html</loc>
+    <lastmod>2023-03-30T03:23:15+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+</urlset>
