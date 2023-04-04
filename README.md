@@ -1,4 +1,5 @@
 # 令和4年度 民間ユースケース開発　UC22-003「容積率可視化シミュレータ」の成果物（Volume Shape Generator）
+![スクリーンショット 2023-04-04 125502](https://user-images.githubusercontent.com/79615787/229683349-960ed493-cf15-4bd1-8429-da2bceab29c5.png)
 
 
 ## 1. 概要
@@ -29,7 +30,7 @@
 * 本レポジトリの利用により生じた損失及び損害等について、国土交通省はいかなる責任も負わないものとします。
 
 ## 参考資料　 <!-- 各リンクは納品時に更新 -->
-* 容積率可視化シミュレータ技術検証レポート: https://www.mlit.go.jp/plateau/libraries/technical-reports/
+* 容積率可視化シミュレータ技術検証レポート: https://www.mlit.go.jp/plateau/file/libraries/doc/plateau_tech_doc_0041_ver01.pdf
 *  PLATEAU Webサイト Use caseページ「容積率可視化シミュレータ」: https://www.mlit.go.jp/plateau/use-case/uc22-003/
 * Babylon.js Webサイト：https://www.babylonjs.com/
 
