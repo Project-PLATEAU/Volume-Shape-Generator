@@ -17,7 +17,7 @@
 
 ## 3．利用手順
 
-* 詳しい利用方法については、こちらの[マニュアル](https://project-plateau.github.io/UC22-003-Volume-Shape-Generator/index.html)をご覧ください。
+* 詳しい利用方法については、こちらの[マニュアル](https://project-plateau.github.io/Volume-Shape-Generator/index.html)をご覧ください。
 
 ## ライセンス <!-- 定型文のため変更しない -->
 * ソースコードおよび関連ドキュメントの著作権は国土交通省に帰属します。
